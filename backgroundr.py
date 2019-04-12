@@ -126,7 +126,7 @@ def transparent_back(image):
 
 
 if __name__ == "__main__":
-    image = cv2.imread('back.jpg', -1)
+    image = cv2.imread('Mask_RCNN/back.jpg', -1)
     height, width, channels = image.shape
     results = model.detect([image], verbose=0)
     r = results[0]
