@@ -130,12 +130,14 @@ if __name__ == "__main__":
     height, width, channels = image.shape
     results = model.detect([image], verbose=0)
     r = results[0]
+    '''
     frame = display_instances(
          image, r['rois'], r['masks'], r['class_ids'], class_names, r['scores']
     )
-
-    cv2.imwrite('temp.png', image)
-
+'''
+    cv2.imwrite('temp.png', r)
+'''
     image = PIL.Image.open("./temp.png")
     image = transparent_back(image)
     image.save("removed_back.png")
+    '''
