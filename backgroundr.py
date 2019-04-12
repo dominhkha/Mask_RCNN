@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import os
 import sys
-from samples import coco
+from samples.coco import coco
 from mrcnn import utils
 from mrcnn import model as modellib
 import PIL.Image
