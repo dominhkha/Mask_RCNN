@@ -92,7 +92,7 @@ def display_instances(image, boxes, masks, ids, names, scores):
 
         # use label to select person object from all the 80 classes in COCO dataset
         label = names[ids[i]]
-        if label == 'person':
+        if label == 'apple':
             # save the largest object in the image as main character
             # other people will be regarded as background
             if square > max_area:
@@ -126,18 +126,18 @@ def transparent_back(image):
 
 
 if __name__ == "__main__":
-    image = cv2.imread('Mask_RCNN/back.jpg', -1)
+    image = cv2.imread('Mask_RCNN/apple.jpg', -1)
     height, width, channels = image.shape
     results = model.detect([image], verbose=0)
     r = results[0]
-    '''
+    
     frame = display_instances(
          image, r['rois'], r['masks'], r['class_ids'], class_names, r['scores']
     )
-'''
+
     cv2.imwrite('temp.png', r)
-'''
+
     image = PIL.Image.open("./temp.png")
     image = transparent_back(image)
     image.save("removed_back.png")
-    '''
+    
