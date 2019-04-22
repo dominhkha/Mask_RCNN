@@ -135,7 +135,7 @@ if __name__ == "__main__":
          image, r['rois'], r['masks'], r['class_ids'], class_names, r['scores']
     )
 
-    cv2.imwrite('temp.png', r)
+    cv2.imwrite('temp.png', frame)
 
     image = PIL.Image.open("./temp.png")
     image = transparent_back(image)
